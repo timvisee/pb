@@ -9,10 +9,10 @@ macro_rules! kb_fmt {
     ($n: ident) => {{
         let kb = 1024f64;
         match $n {
-            $n if $n >= kb.powf(4_f64) => format!("{:.*} TB", 2, $n / kb.powf(4_f64)),
-            $n if $n >= kb.powf(3_f64) => format!("{:.*} GB", 2, $n / kb.powf(3_f64)),
-            $n if $n >= kb.powf(2_f64) => format!("{:.*} MB", 2, $n / kb.powf(2_f64)),
-            $n if $n >= kb => format!("{:.*} KB", 2, $n / kb),
+            $n if $n >= kb.powf(4_f64) => format!("{:.*} TiB", 2, $n / kb.powf(4_f64)),
+            $n if $n >= kb.powf(3_f64) => format!("{:.*} GiB", 2, $n / kb.powf(3_f64)),
+            $n if $n >= kb.powf(2_f64) => format!("{:.*} MiB", 2, $n / kb.powf(2_f64)),
+            $n if $n >= kb => format!("{:.*} KiB", 2, $n / kb),
             _ => format!("{:.*} B", 0, $n)
         }
     }}
